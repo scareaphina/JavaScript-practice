@@ -244,7 +244,7 @@ switch (true){
 
 var height;
 
-height = '';
+height = 23;
 
 if (height || height === 0) {
     console.log('Variable is defined');
@@ -252,6 +252,14 @@ if (height || height === 0) {
     console.log('Variable has NOT been defined');
 } 
 
+
 // good way to test if a variable has been defined or not
 // make sure to define 0 as not falsy unless desired
 
+// equality operators
+if (height == '23'){
+    console.log('The == operator does type coercion!');
+}
+
+// js evaluates the string '23' to be the same as the number 23, which is so freaking cool
+//=== is a strict equality operator that will only return true if things are exactly the same. so '23' === 23 will return false
