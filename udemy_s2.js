@@ -293,3 +293,14 @@ if (johnScore > markScore && johnScore > maryScore){
     console.log('Mary\'s team is the winner with ' + maryScore + ' points!');
 } else {console.log('The contest is a draw!')}
 
+/****************
+ * Functions
+ */
+
+ function calculateAge(birthYear) {
+     return 2018 - birthYear;
+ }
+
+ var ageJohn = calculateAge(1996);
+
+ console.log(ageJohn);
