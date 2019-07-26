@@ -191,6 +191,7 @@ else {console.log(firstName + ' is an adult.');
 var firstName = 'John';
 var age = 16;
 
+// Ternary operator
 age >= 18 ? console.log(firstName + ' drinks beer.') : console.log(firstName + ' drinks juice.');
 
 var drink = age >= 18 ? 'beer' : 'juice';
@@ -202,3 +203,20 @@ console.log(drink);
     var drink = 'juice';
 }*/
 
+// switch statement
+
+var job = 'teacher';
+switch (job) {
+    case 'teacher':
+    case 'instructor':
+        console.log(firstName + ' teaches kids how to make art.');
+        break;
+    case 'driver':
+        console.log(firstName + ' drives a bus in Philadelphia.');
+        break;
+    case 'designer':
+        console.log(firstName + ' designs beautiful museums.');
+        break;
+    default:
+        console.log(firstName + ' does something else.');
+}
