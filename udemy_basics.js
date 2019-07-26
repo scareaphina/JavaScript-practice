@@ -153,3 +153,17 @@ if (isMarried) {
     console.log(firstName + ' is not married.')
 }
 
+var massMark = 80;
+var heightMark = 1.72;
+var massJohn = 92;
+var heightJohn = 1.85;
+
+var MarkBMI = massMark / (heightMark * heightMark);
+var JohnBMI = massJohn / (heightJohn * heightJohn);
+
+if (MarkBMI > JohnBMI) {
+    console.log('Mark\'s BMI is higher than John\'s.');
+} else {
+    console.log('John\'s BMI is higher than mark\'s')
+}
+
