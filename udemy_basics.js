@@ -234,3 +234,24 @@ switch (true){
     default:
         console.log(firstName + ' is an adult.');
 }
+
+/****************
+ * Truthy and falsy values and equality operators
+ */
+
+// falsy values: undefined, null, 0, '', NaN = will be evaluated to false in a boolean situation. not exactly false, but will be evaluated false in if/else
+//truthy values: NOT falsy values
+
+var height;
+
+height = '';
+
+if (height || height === 0) {
+    console.log('Variable is defined');
+} else {
+    console.log('Variable has NOT been defined');
+} 
+
+// good way to test if a variable has been defined or not
+// make sure to define 0 as not falsy unless desired
+
