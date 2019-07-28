@@ -37,3 +37,33 @@ var billWithTip = [bills[0] + tips[0],
                     bills[2] + tips[1]]
 
 console.log(tips, billWithTip);
+
+//Me trying to get this exercise to print out an actual sentence to the console
+
+function calculateTip(bill) {
+    if (bill < 50) {
+        console.log(bill / .2);
+    } else if (bill >= 50 && bill < 200) {
+        console.log(bill / .15);
+    } else if (bill >= 200) {
+        console.log(bill / .1);
+    }
+}
+
+var bill = [124, 48, 268];
+var tip = [calculateTip(bill[0]),
+            calculateTip(bill[1]),
+            calculateTip(bill[2])];
+
+var billWithTip = [bill[0] + tip[0],
+                  [bill[1] + tip[1]],
+                  [bill[2] + tip[2]]]
+
+
+console.log('The proper amount to tip for a bill of $' + bill[0] + ' is ' + calculateTip[0] + '.');
+console.log('The proper amount to tip for a bill of $' + bill[1] + ' is ' + calculateTip[1] + '.');
+console.log('The proper amount to tip for a bill of $' + bill[2] + ' is ' + calculateTip[2] + '.');
+
+console.log('The total amount due on this bill is $' + billWithTip[0] + ' .');
+console.log('The total amount due on this bill is $' + billWithTip[1] + ' .');
+console.log('The total amount due on this bill is $' + billWithTip[2] + ' .');
