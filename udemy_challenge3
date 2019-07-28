@@ -18,14 +18,16 @@
 function calculateTip(bill) {
     var percentage;
     if (bill < 50) {
-        percentage = 0.2;
+        percentage = 0.25;
     } else if (bill >= 50 && bill < 200) {
-        percentage = 0.15;
+        percentage = 0.22;
     } else {
-        percentage = 0.1;
+        percentage = 0.2;
     }
     return percentage * bill;
 }
+
+//Those tip amounts are bullshit, so I raised them.
 
 var bills = [124, 48, 268];
 var tips = [calculateTip(bills[0]), 
@@ -41,14 +43,18 @@ console.log(tips, billWithTip);
 //Me trying to get this exercise to print out an actual sentence to the console
 
 function calculateTip(bill) {
+    var percentage;
     if (bill < 50) {
-        console.log(bill / .2);
+        percentage = 0.25;
     } else if (bill >= 50 && bill < 200) {
-        console.log(bill / .15);
-    } else if (bill >= 200) {
-        console.log(bill / .1);
+        percentage = 0.22;
+    } else {
+        percentage = 0.2;
     }
+    return percentage * bill;
 }
+
+//Those tip amounts are bullshit, so I raised them.
 
 var bill = [124, 48, 268];
 var tip = [calculateTip(bill[0]),
@@ -64,6 +70,6 @@ console.log('The proper amount to tip for a bill of $' + bill[0] + ' is ' + calc
 console.log('The proper amount to tip for a bill of $' + bill[1] + ' is ' + calculateTip[1] + '.');
 console.log('The proper amount to tip for a bill of $' + bill[2] + ' is ' + calculateTip[2] + '.');
 
-console.log('The total amount due on this bill is $' + billWithTip[0] + ' .');
-console.log('The total amount due on this bill is $' + billWithTip[1] + ' .');
-console.log('The total amount due on this bill is $' + billWithTip[2] + ' .');
+console.log('The total amount due on this bill is $' + billWithTip[0] + '.');
+console.log('The total amount due on this bill is $' + billWithTip[1] + '.');
+console.log('The total amount due on this bill is $' + billWithTip[2] + '.');
