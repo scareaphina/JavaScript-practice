@@ -66,9 +66,9 @@ var billWithTip = [bill[0] + tip[0],
                   [bill[2] + tip[2]]]
 
 
-console.log('The proper amount to tip for a bill of $' + bill[0] + ' is ' + calculateTip[0] + '.');
-console.log('The proper amount to tip for a bill of $' + bill[1] + ' is ' + calculateTip[1] + '.');
-console.log('The proper amount to tip for a bill of $' + bill[2] + ' is ' + calculateTip[2] + '.');
+console.log('The proper amount to tip for a bill of $' + bill[0] + ' is $' + tip[0] + '.');
+console.log('The proper amount to tip for a bill of $' + bill[1] + ' is $' + tip[1] + '.');
+console.log('The proper amount to tip for a bill of $' + bill[2] + ' is $' + tip[2] + '.');
 
 console.log('The total amount due on this bill is $' + billWithTip[0] + '.');
 console.log('The total amount due on this bill is $' + billWithTip[1] + '.');
