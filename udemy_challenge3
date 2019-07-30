@@ -1,52 +1,78 @@
-/******************
- * Roman Numerals
- * 1 = I        11 = XI     50 = L
- * 2 = II       12 = XII    100 = C
- * 3 = III      13 = XIII   500 = D
- * 4 = IV       14 = XIV    1000 = M
- * 5 = V        15 = XV     2000 = MM
- * 6 = VI       16 = XVI    3000 = MMM
- * 7 = VII      17 = XVII
- * 8 = VIII     18 = XVIII
- * 9 = IX       19 = XIX
- * 10 = X       20 = XX
+/**************
+ * CODING CHALLENGE 2
  */
 
-function numeralMaker(number) {
-    return 'The Roman numeral for ' + number + 'is ' + transNumeral + ' .';
-}
-var number = (1);
-function transNumeral(number) {
-    //if (number == 1){
-    //    return('I');
-//    }
-    return transNumeralIter (number, '');
-}
-function transNumeralIter (number, romanNumeral) {
-    if (number == 1){
-        return(romanNumeral + 'I');
-    } if (number > 1 && number < 5){
-        return transNumeralIter(number - 1, romanNumeral + 'I');
-    } if (number == 5){
-        return(romanNumeral + 'V');
-    } if (number > 5 && number < 10){
-        return transNumeralIter(number - 5, romanNumeral + 'V');
-    } if (number == 10){
-        return(romanNumeral + 'X');
-    } if (number > 10 && number <= 15){
-        return transNumeralIter(number - 10, 'X');
+ /*
+ John and his family went on a holiday and went to three different restaurants. The bills were $124, $48, and $268.
+
+ To tip the waiter a fair amount, John created a simple tip calculator (as a function). He likes to tip 20% of the bill when the bill is less than $50, 15% of the bill when then bill is between $50 and $200, and 10% if the bill is more than $200.
+
+ In the end, John would like to have two arrays:
+ 1. Containing all three tips (one for each bill)
+ 2. Containing all three final paid amounts (bill + tip)
+
+ (NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
+ */
+
+
+function calculateTip(bill) {
+    var percentage;
+    if (bill < 50) {
+        percentage = 0.25;
+    } else if (bill >= 50 && bill < 200) {
+        percentage = 0.22;
+    } else {
+        percentage = 0.2;
     }
+    return percentage * bill;
 }
 
-// I know 'else if' isn't the right move here, but i'm not sure how to do 'and/or' as a part of the function. So if a string includes 1, return I. But if it also includes a 5, return V in addition.
+//Those tip amounts are bullshit, so I raised them.
 
-assertEqual('I', transNumeral(1))
-assertEqual('II', transNumeral(2))
-assertEqual('III', transNumeral(3))
-assertEqual('IIII', transNumeral(4))
-assertEqual('V', transNumeral(5))
-assertEqual('VI', transNumeral(6))
-assertEqual('VII', transNumeral(7))
+var bills = [124, 48, 268];
+var tips = [calculateTip(bills[0]), 
+            calculateTip(bills[1]),
+            calculateTip(bills[2])];
+
+var billWithTip = [bills[0] + tips[0],
+                    bills[1] + tips[1],
+                    bills[2] + tips[1]]
+
+console.log(tips, billWithTip);
+
+//Me trying to get this exercise to print out an actual sentence to the console
+
+function calculateTip(bill) {
+    var percentage;
+    if (bill < 50) {
+        percentage = 0.25;
+    } else if (bill >= 50 && bill < 200) {
+        percentage = 0.22;
+    } else {
+        percentage = 0.2;
+    }
+    return percentage * bill;
+}
+
+//Those tip amounts are bullshit, so I raised them.
+
+var bill = [124, 48, 268];
+var tip = [calculateTip(bill[0]),
+            calculateTip(bill[1]),
+            calculateTip(bill[2])];
+
+var billWithTip = [bill[0] + tip[0],
+                  [bill[1] + tip[1]],
+                  [bill[2] + tip[2]]]
+
+
+console.log('The proper amount to tip for a bill of $' + bill[0] + ' is $' + tip[0] + '.');
+console.log('The proper amount to tip for a bill of $' + bill[1] + ' is $' + tip[1] + '.');
+console.log('The proper amount to tip for a bill of $' + bill[2] + ' is $' + tip[2] + '.');
+
+console.log('The total amount due on this bill is $' + billWithTip[0] + '.');
+console.log('The total amount due on this bill is $' + billWithTip[1] + '.');
+console.log('The total amount due on this bill is $' + billWithTip[2] + '.');assertEqual('VII', transNumeral(7))
 assertEqual('VIII', transNumeral(8))
 assertEqual('VIIII', transNumeral(9))
 assertEqual('X', transNumeral(10))
