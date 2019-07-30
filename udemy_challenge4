@@ -13,15 +13,36 @@
  */
 
  var mark = {
-     firstName = 'Mark',
-     lastName = 'Anderson',
-     mass = 80,
-     height = 1.72,
+     firstName: 'Mark',
+     lastName: 'Anderson',
+     mass: 80,
+     height: 1.72,
+     calcBMI: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
  }
 
  var john = {
-    firstName = 'John',
-    lastName = 'Smith',
-    mass = 92,
-    height = 1.85,
+    firstName: 'John',
+    lastName: 'Smith',
+    mass: 92,
+    height: 1.85,
+    calcBMI: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
+
+john.calcBMI();
+mark.calcBMI();
+
+console.log(john, mark);
+
+if (john.bmi > mark.bmi) {
+    console.log(john.firstName + ' has a higher BMI of ' + john.bmi + '.');
+} else if (mark.bmi > john.bmi) {
+    console.log(mark.firstName + ' has a higher BMI of ' + mark.bmi + '.');
+} else {
+    console.log('John and Mark\'s BMIs are equal');
 }
