@@ -24,4 +24,27 @@
  8. Log to the console which family paid the highest tips on average
  * /
  
- 
+ var john = {
+    fullName: 'John Smith',
+    bills: [124, 48, 268, 180, 42],
+    tipCalculator: function(){
+        this.tips = [];
+        this.finalBill = [];
+
+        for (var b = 0; b < this.bills.length; b++)
+        {
+            var percentage;
+            var bill = this.bills[b];
+
+            if (this.bills[b] < 50) {
+                percentage = 0.25;
+            } else (this.bills[b] >= 50 && this.bills < 200) {
+                percentage = 0.22;
+            } else {
+                percentage = 0.2;
+            }
+        }
+            this.tips[b] = bills + percentage;
+            this.finalBill[b] = bills + bills + percentage;
+    }
+}
