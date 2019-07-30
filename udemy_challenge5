@@ -27,7 +27,7 @@
  var john = {
     fullName: 'John Smith',
     bills: [124, 48, 268, 180, 42],
-    tipCalculator: function(){
+    tipCalculator: function() {
         this.tips = [];
         this.finalBill = [];
 
@@ -36,15 +36,48 @@
             var percentage;
             var bill = this.bills[b];
 
-            if (this.bills[b] < 50) {
+            if (bill < 50) {
                 percentage = 0.25;
-            } else (this.bills[b] >= 50 && this.bills < 200) {
+            } else if (bill >= 50 && bill < 200) {
                 percentage = 0.22;
             } else {
                 percentage = 0.2;
             }
         }
-            this.tips[b] = bills + percentage;
-            this.finalBill[b] = bills + bills + percentage;
+            this.tips[b] = bill + percentage;
+            this.finalBill[b] = bill + bill * percentage;
     }
 }
+
+var mark = {
+    fullName: 'Mark Anderson',
+    bills: [77, 375, 110, 45],
+    tipCalculator: function() {
+        this.tips = [];
+        this.finalBill = [];
+
+        for (var b = 0; b < this.bills.length; b++)
+        {
+            var percentage;
+            var bill = this.bills[b];
+
+            if (bill < 100) {
+                percentage = 0.2;
+            } else if (bill >= 100 && bill < 300) {
+                percentage = 0.1;
+            } else {
+                percentage = 0.25;
+            }
+        }
+            this.tips[b] = bill + percentage;
+            this.finalBill[b] = bill + bill * percentage;
+    }
+}
+
+// The bills were $77, $375, $110, and $45. Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the bill is between $100 and $300, and $25% if the bill is more than $300 (different than John).
+
+john.tipCalculator();
+console.log(john);
+
+mark.tipCalculator();
+console.log(mark);
