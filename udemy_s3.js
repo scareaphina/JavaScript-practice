@@ -142,4 +142,5 @@ var mike = {
 }
 
 mike.calculateAge = john.calculateAge; // an example of method borrowing, simply declaring that mike.calculateAge is the same as the function described in the john object and VOILA!
+// super cool because the "this" only gets defined when the method gets called, so the borrowing works because "this" refers to whomever the method is borrowed to
 mike.calculateAge();
