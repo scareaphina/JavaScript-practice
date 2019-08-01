@@ -534,3 +534,37 @@ yearsUntilRetirement(1969, 'Jane');
  console.log(whatDoYouDo('teacher', 'John'));
  console.log(whatDoYouDo('designer', 'Jane'));
  console.log(whatDoYouDo('retired', 'Mark'));
+
+/*****************
+ * arrays
+ */
+
+// initialize new array
+var names = ['John', 'Mark', 'Jane'];
+var years = new Array(1990, 1948, 1969);
+
+console.log(names[2]);
+console.log(names.length);
+
+// mutate array data
+names[1] = 'Ben';
+names[names.length] = 'Mary';
+console.log(names);
+
+// different data types
+var john = ['John', 'Smith', 1990, 'designer', false];
+
+john.push('blue'); //add to end
+john.unshift('Mr.'); //add to beginning
+console.log(john);
+
+john.pop(); // remove last item in array
+john.pop();
+john.shift(); // remove first item in array
+console.log(john);
+
+console.log(john.indexOf(1990)); // tells you the position of an argument in an array - if not in the array, returns -1
+console.log(john.indexOf(23));
+
+var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer.' : 'John IS a designer.';
+console.log(isDesigner);
