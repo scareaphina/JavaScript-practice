@@ -104,3 +104,42 @@ function third() {
 
 // execution stack is different from scope chain - so third does not have access to c. the order doesn't matter, because third is in a different scope than the c variable and cannot access it's definition.
 // the only definitions available to third are the ones within it's scope, so a and d
+
+///////////////////////////////////////
+// Lecture: The this keyword
+
+//console.log(this);
+
+/*calculateAge(1985);
+
+function calculateAge(year) {
+    console.log(2016 - year);
+    console.log(this);
+}*/
+
+// regular function - this always points to the window
+
+var john = {
+    name: 'John',
+    yearOfBirth: 1990,
+    calculateAge: function() {
+        console.log(this);
+        console.log(2016 - this.yearOfBirth);
+
+        /*function innerFunction() {
+            console.log(this); //points to the window because innerFunction doesn't have a function defined
+        }
+        innerFunction();
+        */
+    }
+}
+
+john.calculateAge();
+
+var mike = {
+    name: 'Mike',
+    yearOfBirth: 1984,
+}
+
+mike.calculateAge = john.calculateAge; // an example of method borrowing, simply declaring that mike.calculateAge is the same as the function described in the john object and VOILA!
+mike.calculateAge();
