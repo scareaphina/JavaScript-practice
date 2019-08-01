@@ -95,3 +95,5 @@ console.log(john, mark);
  7. Calculate the average tip for each family
  8. Log to the console which family paid the highest tips on average
  */
+
+// not getting the result i expect. will come back to this.
