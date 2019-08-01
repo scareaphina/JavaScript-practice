@@ -26,3 +26,25 @@ console.log(MarkBMI, JohnBMI);
 var higherBMI = MarkBMI > JohnBMI;
 
 console.log('Is Mark\'s BMI higher than John\'s? ' + higherBMI);
+
+///////////////////////////////////
+
+// second attempt
+
+var massMark = 80;
+var heightMark = 1.72;
+var massJohn = 92;
+var heightJohn = 1.85;
+
+var markBMI = (massMark / (heightMark * heightMark));
+var johnBMI = (massJohn / (heightJohn * heightJohn));
+
+console.log(markBMI);
+console.log(johnBMI);
+
+if (markBMI > johnBMI) {
+    console.log('Mark\'s BMI is higher than John\'s at ' + markBMI + '.');
+    if (markBMI < johnBMI) {
+        console.log('John\'s BMI is higher than Mark\'s at ' + johnBMI + '.');
+    }
+}
