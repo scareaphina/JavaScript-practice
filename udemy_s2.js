@@ -568,3 +568,26 @@ console.log(john.indexOf(23));
 
 var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer.' : 'John IS a designer.';
 console.log(isDesigner);
+
+// how Javascript works
+
+var name = 'John';
+
+function first() {
+    var a = 'Hello!';
+    second();
+    var x = a + name;
+}
+
+function second() {
+    var b = 'Hi!';
+    third();
+    var z = b + name;
+}
+
+function third() {
+    var c = 'Hey!';
+    var z = c + name;
+}
+
+first();
