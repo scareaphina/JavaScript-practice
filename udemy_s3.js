@@ -58,4 +58,25 @@ function foo() {
 foo();
 console.log(age); // so in this order, it prints 23 to the console because the variable of 23, above, gets stored in the global execution context object, so the function foo doesn't get it's definition of age called to the console
 
-// BIG TAKEAWAY: so we can use function declarations befor we actually declare them in our code.
+// BIG TAKEAWAY: we can use function declarations before we actually declare them in our code.
+
+///////////////////////////////////////
+// Lecture: Scoping
+
+// First scoping example
+
+var a = 'Hello!';
+first();
+
+function first() {
+    var b = 'Hi!';
+    second();
+
+    function second() {
+        var c = 'Hey!';
+        console.log(a + b + c);
+    }
+}
+
+// this return works because the second function has access to the a and b because of the scoping chain, so it can return all three to us
+// this does not work backwards. global scope will not have access to b or c unless we return their values from the function
