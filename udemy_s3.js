@@ -103,3 +103,4 @@ function third() {
 }
 
 // execution stack is different from scope chain - so third does not have access to c. the order doesn't matter, because third is in a different scope than the c variable and cannot access it's definition.
+// the only definitions available to third are the ones within it's scope, so a and d
