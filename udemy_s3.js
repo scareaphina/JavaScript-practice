@@ -80,3 +80,26 @@ function first() {
 
 // this return works because the second function has access to the a and b because of the scoping chain, so it can return all three to us
 // this does not work backwards. global scope will not have access to b or c unless we return their values from the function
+
+// Example to show the differece between execution stack and scope chain
+*/
+
+var a = 'Hello!';
+first();
+
+function first() {
+    var b = 'Hi!';
+    second();
+
+    function second() {
+        var c = 'Hey!';
+        third()
+    }
+}
+
+function third() {
+    var d = 'John';
+    console.log(c);
+}
+
+// execution stack is different from scope chain - so third does not have access to c. the order doesn't matter, because third is in a different scope than the c variable and cannot access it's definition.
