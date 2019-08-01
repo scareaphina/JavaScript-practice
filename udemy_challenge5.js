@@ -43,9 +43,9 @@ var john = {
             } else {
                 percentage = 0.2;
             }
+            this.tips[b] = bill * percentage;
+            this.finalBill[b] = bill + bill * percentage; // was not originally getting the result i wanted, had to nest this.tips and finalBill in the actual if function to get the correct addition to the array
         }
-            this.tips[b] = bill + percentage;
-            this.finalBill[b] = bill + bill * percentage;
     }
 }
 
@@ -68,9 +68,9 @@ var mark = {
             } else {
                 percentage = 0.25;
             }
-        }
-            this.tips[b] = bill + percentage;
+            this.tips[b] = bill * percentage;
             this.finalBill[b] = bill + bill * percentage;
+        }
     }
 }
 
@@ -95,5 +95,3 @@ console.log(john, mark);
  7. Calculate the average tip for each family
  8. Log to the console which family paid the highest tips on average
  */
-
-// not getting the result i expect. will come back to this.
