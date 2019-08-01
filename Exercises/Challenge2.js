@@ -26,3 +26,23 @@ if (johnScore > markScore && johnScore > maryScore){
 } else if (maryScore > johnScore && maryScore > markScore){
     console.log('Mary\'s team is the winner with ' + maryScore + ' points!');
 } else {console.log('The contest is a draw!')}
+
+//////////////////////////////
+
+// second attempt
+
+var johnScore = (89, 102, 103) / 3;
+var mikeScore = (116, 94, 123) / 3;
+var maryScore = (97, 134, 105) / 3;
+
+console.log(johnScore);
+console.log(mikeScore);
+console.log(maryScore);
+
+if (johnScore > mikeScore && johnScore > maryScore){
+    console.log('John\'s team is the winner with ' + johnScore + ' points on average!'); 
+} else if (mikeScore > johnScore && mikeScore > maryScore){
+        console.log('Mike\'s team is the winner with ' + mikeScore + ' points on average!');
+    } else if (maryScore > johnScore && maryScore > mikeScore){
+            console.log('Mary\'s team is the winner with ' + maryScore + ' points on average!');
+        } else {console.log('The tournament is a tie! Great job, all!')}
