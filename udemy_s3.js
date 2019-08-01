@@ -57,3 +57,5 @@ function foo() {
 }
 foo();
 console.log(age); // so in this order, it prints 23 to the console because the variable of 23, above, gets stored in the global execution context object, so the function foo doesn't get it's definition of age called to the console
+
+// BIG TAKEAWAY: so we can use function declarations befor we actually declare them in our code.
