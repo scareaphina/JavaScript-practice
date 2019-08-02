@@ -13,9 +13,15 @@ var scores, roundScore, activePlayer;
 
 scores =[0,0];
 roundScore = 0;
-activePlayer = 1;
+activePlayer = 0;
 
 document.querySelector('.dice').style.display = 'none';
+
+document.getElementById('score-0').textContent = '0';
+document.getElementById('score-1').textContent = '0';
+document.getElementById('current-0').textContent = '0';
+document.getElementById('current-1').textContent = '0';
+
 
 document.querySelector('.btn-roll').addEventListener('click', function() { 
 
@@ -27,8 +33,21 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     diceDOM.style.display = 'block';
     diceDOM.src = 'dice-' + dice + '.png';
 
-
     //  3. update the round score IF the rolled number is not a 1
+    if (dice !== 1) {
+        // add score
+        roundScore += dice;
+        document.querySelector('#current-' + activePlayer).textContent = roundScore;
+    } else {
+        // next player
+        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+        roundScore = 0;
+
+        document.getElementById('current-0').textContent = '0';
+        document.getElementById('current-1').textContent = '0';
+    }
+
+
 
 });
 
@@ -48,7 +67,6 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 
 
 
-//document.querySelector('#current-' + activePlayer).textContent = dice;
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>'; <- innerHTML function is built in and allows us to reference html in code. must put it as a string so JS can read it. (called a "setter")
 
 //var x = document.querySelector('#score-0').textContent; // read the variable (score-0) and store the content into the variable defined here (called a "getter")
