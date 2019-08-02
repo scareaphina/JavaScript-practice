@@ -9,26 +9,50 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer, dice;
+var scores, roundScore, activePlayer;
 
 scores =[0,0];
 roundScore = 0;
 activePlayer = 1;
 
-dice = Math.floor(Math.random() * 6) +1;
+document.querySelector('.dice').style.display = 'none';
 
-document.querySelector('#current-' + activePlayer).textContent = dice;
+document.querySelector('.btn-roll').addEventListener('click', function() { 
+
+    // 1. random number
+    var dice = Math.floor(Math.random() * 6) +1;
+
+    // 2. display the result
+    var diceDOM = document.querySelector('.dice');
+    diceDOM.style.display = 'block';
+    diceDOM.src = 'dice-' + dice + '.png';
+
+
+    //  3. update the round score IF the rolled number is not a 1
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//document.querySelector('#current-' + activePlayer).textContent = dice;
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>'; <- innerHTML function is built in and allows us to reference html in code. must put it as a string so JS can read it. (called a "setter")
 
 //var x = document.querySelector('#score-0').textContent; // read the variable (score-0) and store the content into the variable defined here (called a "getter")
 //console.log(x);
 
-document.querySelector('.dice').style.display = 'none';
 
-
-
-
-
-
-
-
+//document.querySelector('.btn-roll').addEventListener('click', function() { // anonymous function - defined here and ONLY gets called in this circumstance. can also fill with a function that is define elsewhere, but since we only want the button to be the thing that rolls the dice, an anonymous function works here
