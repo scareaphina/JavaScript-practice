@@ -1,9 +1,3 @@
-// CONCEPTS
-// how to generate a random number
-// how to manipulate the DOM
-// how to read from the DOM
-// how to change CSS styles
-
 /*
 GAME RULES:
 
