@@ -15,14 +15,21 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer, dice; // a clean way to declare variables and then define them below
+var scores, roundScore, activePlayer, dice;
 
 scores =[0,0];
 roundScore = 0;
-activePlayer = 0;
+activePlayer = 1;
 
-dice = Math.floor(Math.random() * 6) +1; // using the math function to generate a random number between 1 and six
-console.log(dice);
+dice = Math.floor(Math.random() * 6) +1;
+
+document.querySelector('#current-' + activePlayer).textContent = dice;
+//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>'; <- innerHTML function is built in and allows us to reference html in code. must put it as a string so JS can read it. (called a "setter")
+
+//var x = document.querySelector('#score-0').textContent; // read the variable (score-0) and store the content into the variable defined here (called a "getter")
+//console.log(x);
+
+document.querySelector('.dice').style.display = 'none';
 
 
 
