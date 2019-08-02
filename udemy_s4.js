@@ -22,7 +22,6 @@ document.getElementById('score-1').textContent = '0';
 document.getElementById('current-0').textContent = '0';
 document.getElementById('current-1').textContent = '0';
 
-
 document.querySelector('.btn-roll').addEventListener('click', function() { 
 
     // 1. random number
@@ -40,26 +39,45 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
     } else {
         // next player
-        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-        roundScore = 0;
-
-        document.getElementById('current-0').textContent = '0';
-        document.getElementById('current-1').textContent = '0';
-
-        document.querySelector('.player-0-panel').classList.toggle('active');
-        document.querySelector('.player-1-panel').classList.toggle('active');
-
-        document.querySelector('.dice').style.display = 'none';
+        nextPlayer();
     }
 });
 
 
+document.querySelector('.btn-hold').addEventListener('click', function() {
+    // 1. add current score to global score
+    scores[activePlayer] += roundScore;
 
+    // 2. update UI 
+    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+
+    
+    // 3. check if player won the game
+    if (scores[activePlayer] >= 20) {
+        document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+        document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+    } else {
+        nextPlayer;
+    }
+
+    // 4. next player
+    nextPlayer();
 });
 
+function nextPlayer() {
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+    roundScore = 0;
 
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
 
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
 
+    document.querySelector('.dice').style.display = 'none';
+}
 
 
 
@@ -80,3 +98,6 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 
 
 //document.querySelector('.btn-roll').addEventListener('click', function() { // anonymous function - defined here and ONLY gets called in this circumstance. can also fill with a function that is define elsewhere, but since we only want the button to be the thing that rolls the dice, an anonymous function works here
+
+//document.querySelector('.player-0-panel').classList.remove('active'); <- removes the active class from here
+//document.querySelector('.player-1-panel').classList.add('active'); <- adds the active class here (used toggle for this particular thing)
