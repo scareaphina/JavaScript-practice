@@ -33,3 +33,23 @@ console.log(john.lastName);
 console.log(jane.lastName);
 console.log(mark.lastName);
 
+// function constructor - making my own
+
+var Friend = function(name, faveFood, partner, petName, homeTown, pronouns) {
+    this.name = name;
+    this.faveFood = faveFood;
+    this.partner = partner;
+    this.petName = petName;
+    this.homeTown = homeTown;
+    this.pronouns = pronouns;
+}
+
+var safi = new Friend('Safi', 'emergency fish', 'Vanessa', '', 'Kingston', 'she/her');
+var cole = new Friend('Cole', '', 'Tristan', '', '', 'they/them');
+var briar = new Friend('Briar', 'Thai', 'Jessamine', 'Pika', 'Austin','xe/hir');
+var claire = new Friend('Claire', 'sushi', 'Filipe', 'Cleo', 'Baltimore', 'she/her')
+
+console.log(safi);
+console.log(cole);
+console.log(briar);
+console.log(claire);
