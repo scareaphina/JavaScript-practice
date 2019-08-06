@@ -83,3 +83,18 @@ a = 46;
 
 console.log(a);
 console.log(b);
+
+// returns 23 and 46
+
+var obj1 = {
+    name: 'John',
+    age: 26
+};
+var obj2 = obj1;
+obj1.age = 30;
+console.log(obj1.age);
+console.log(obj2.age);
+
+// returns 30 and 30
+
+// when we said obj1 = obj2, we didn't create a new object, we just created a reference that pointed to the same object, so changing the age on object 1 changes the age on object 2. because they are the same object.
