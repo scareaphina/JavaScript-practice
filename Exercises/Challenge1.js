@@ -48,3 +48,25 @@ if (markBMI > johnBMI) {
         console.log('John\'s BMI is higher than Mark\'s at ' + johnBMI + '.');
     }
 }
+
+//third attempt using function constructor and object inheritance
+
+var Person = function(name, mass, height) {
+     this.name = name;
+     this.mass = mass;
+     this.height = height;
+ }
+
+Person.prototype.calcBMI = function () {
+    console.log(this.mass / (this.height * this.height));
+}
+
+var john = new Person('John', 80, 1.72);
+var mark = new Person('Mark', 92, 1.85);
+
+john.calcBMI();
+mark.calcBMI();
+
+var higherBMI = john.calcBMI > mark.calcBMI;
+
+console.log('Is Mark\'s BMI higher than John\'s? ' + higherBMI);
