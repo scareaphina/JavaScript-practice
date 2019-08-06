@@ -46,3 +46,37 @@ if (johnScore > mikeScore && johnScore > maryScore){
     } else if (maryScore > johnScore && maryScore > mikeScore){
             console.log('Mary\'s team is the winner with ' + maryScore + ' points on average!');
         } else {console.log('The tournament is a tie! Great job, all!')}
+
+//////////////////////
+
+// third attempt
+
+var Team = function(name, scores) {
+    this.name = name;
+    this.scores = scores;
+}
+
+Team.prototype.scoreAverage = function() {
+    console.log(this.scores +);
+}
+
+// is there a way to add all of the scores together?
+
+var john = new Team('John\'s Team', (89, 102, 103));
+var mark = new Team('Mark\'s Team', (116, 94, 123));
+
+john.scoreAverage();
+mark.scoreAverage();
+
+john.scoreAverage();
+mark.scoreAverage();
+
+var winning = function() {
+    if (john.scoreAverage > mark.scoreAverage) {
+        console.log('John\'s Team is the winner with ' + john.scoreAverage + ' points!');
+    } else if (john.scoreAverage < mark.scoreAverage) {
+        console.log('Mark\'s Team is the winner with ' + mark.scoreAverage + ' points!');
+    } else {
+        console.log('The game was a tie! Great job to both teams!');
+    }
+}
