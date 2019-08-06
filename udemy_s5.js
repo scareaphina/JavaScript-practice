@@ -12,6 +12,7 @@ var Person = function(name, yearOfBirth, job) {
     this.job = job;
 }
 
+// inheritance
 Person.prototype.calculateAge = function () {
     console.log(2016 - this.yearOfBirth);
 };
