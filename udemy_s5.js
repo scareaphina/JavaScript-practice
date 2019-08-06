@@ -73,3 +73,13 @@ var jane = Object.create(personProto,
         yearOfBirth: { value: 1969 },
         job: { value: 'designer' }
     });
+
+// primitives vs objects
+// variables associated with objects do not actually contain the object, rather they contain a reference to the place in memory where the object is stored (abstraction)
+
+var a = 23;
+var b = a;
+a = 46;
+
+console.log(a);
+console.log(b);
