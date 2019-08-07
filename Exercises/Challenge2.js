@@ -57,10 +57,10 @@ var Team = function(name, scores) {
 }
 
 Team.prototype.scoreAverage = function() {
-    console.log(this.scores +);
+    console.log(this.scores.reduce((a,b) => a + b, 0));
 }
 
-// is there a way to add all of the scores together?
+// is there a way to add all of the scores together? -- haha reduce
 
 var john = new Team('John\'s Team', (89, 102, 103));
 var mark = new Team('Mark\'s Team', (116, 94, 123));
