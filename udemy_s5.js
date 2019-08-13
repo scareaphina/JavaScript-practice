@@ -186,3 +186,35 @@ designerQuestion('Mark');
 designerQuestion('Mike');
 
 interviewQuestion('teacher')('Mark');
+
+////////////////////////////
+
+// writing my own function
+
+function comfortIn(friend) {
+    if (friend === 'sad') {
+        return function(name) {
+            console.log('I\'m sorry that you are feeling sad, ' + name + '. How can I best support you right now?');
+        }
+    } else if (friend === 'activated') {
+        return function(name) {
+            console.log(name + ' I\'m so sorry. That sounds really upsetting. What do you need from me?');
+        }
+    } else if (friend === 'sick') {
+        return function(name) {
+            console.log('Being sick sucks, ' + name + '. What can I do to help when you\'re feeling this way?');
+        }
+    } else {
+        return function(name) {
+            console.log('It\'s okay if you don\'t know exactly what you\'re feeling right now. Let me know how I can support you when you feel comfortable.')
+        }
+    }
+}
+
+var sadFeel = comfortIn('sad');
+var activatedFeel = comfortIn('activated');
+var sickFeel = comfortIn('sick');
+
+sadFeel('Claire');
+activatedFeel('Shane');
+sickFeel('Safi');
