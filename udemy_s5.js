@@ -119,3 +119,7 @@ console.log(age);
 console.log(obj.city);
 
 // primitive remains unchanged
+
+// Functions
+
+// Functions are an instance of the object type and behave like any other object. we can store them in a variable, pass them as an argument to other functions, and return functions from other functions.
