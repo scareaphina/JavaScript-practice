@@ -123,3 +123,17 @@ console.log(obj.city);
 // Functions
 
 // Functions are an instance of the object type and behave like any other object. we can store them in a variable, pass them as an argument to other functions, and return functions from other functions.
+
+var years = [1990, 1965, 1937, 2005, 1998];
+
+function arrayCalc(arr, fn) {
+    var arrRes = [];
+    for (var i = 0, i < arr.length; i++) {
+        arrRes.push(fn(arr[i]));
+    }
+    return arrRes;
+}
+
+function calculateAge(el) {
+    return 2016 - el;
+}
