@@ -158,6 +158,8 @@ console.log(ages);
 console.log(fullAges);
 console.log(rates);
 
+////////////////////////////
+
 function interviewQuestion(job) {
     if (job === 'designer') {
         return function(name) {
@@ -173,3 +175,14 @@ function interviewQuestion(job) {
         }
     }
 }
+
+var teacherQuestion = interviewQuestion('teacher');
+var designerQuestion = interviewQuestion('designer');
+
+teacherQuestion('John');
+designerQuestion('John');
+designerQuestion('Jane');
+designerQuestion('Mark');
+designerQuestion('Mike');
+
+interviewQuestion('teacher')('Mark');
