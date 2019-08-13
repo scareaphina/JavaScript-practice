@@ -218,3 +218,28 @@ var sickFeel = comfortIn('sick');
 sadFeel('Claire');
 activatedFeel('Shane');
 sickFeel('Safi');
+
+////////////////////////
+
+// immediately invoked function expressions IIFE 
+
+/*function game() {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+}
+game();
+*/
+
+// trick the parser into thinking that what is within the () is a function expression and not a declaration. so we can wrap an unnamed function in () and have it work as an expression
+
+(function () {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+}) ();
+
+//console.log(score);
+
+(function (goodLuck) {
+    var score = Math.random() * 10;
+    console.log(score >= 5 - goodLuck);
+}) (5);
