@@ -317,3 +317,21 @@ var john = {
 
 john.presentation('formal', 'morning');
 john.presentation('friendly', 'evening');
+
+// call method
+john.presentation.call(emily, 'formal', 'evening');
+john.presentation.call(emily, 'friendly', 'afternoon');
+
+// apply method
+// john.presentation.apply(emily ['friendly, afternoon']);
+
+// bind method
+var johnFriendly = john.presentation.bind(john, 'friendly');
+
+johnFriendly('morning');
+johnFriendly('night');
+
+var emilyFormal = john.presentation.bind(emily, 'formal');
+
+emilyFormal('afternoon');
+emilyFormal('evening');
