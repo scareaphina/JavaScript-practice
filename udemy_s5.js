@@ -63,16 +63,18 @@ var personProto = {
 };
 
 var john = Object.create(personProto);
+
 john.name = 'John';
 john.yearOfBirth = 1990;
 john.job = 'teacher';
 
-var jane = Object.create(personProto,
-    {
-        name: { value: 'Jane' },
-        yearOfBirth: { value: 1969 },
-        job: { value: 'designer' }
-    });
+var jane = Object.create(personProto, {
+    name: { value: 'Jane' },
+    yearOfBirth: { value: 1969 },
+    job: { value: 'designer' }
+});
+
+// allows us to directly specify which object should be a prototype
 
 // primitives vs objects
 // variables associated with objects do not actually contain the object, rather they contain a reference to the place in memory where the object is stored (abstraction)
