@@ -298,3 +298,22 @@ function interviewQuestion(job) {
 interviewQuestion('teacher')('John');
 interviewQuestion('designer')('Jane');
 interviewQuestion('driver')('Mike');
+
+///////////////////////////
+// bind, call, and apply
+
+var john = {
+    name: 'John',
+    age: 26,
+    job: 'teacher',
+    presentation: function(style, timeOfDay) {
+        if (style === 'formal') {
+            console.log('Good ' + timeOfDay + ', everyone! I\'m ' + this.name + ', I\'m a ' + this.job + ', and I\'m ' + this.age + ' years old.');
+        } else if (style === 'friendly') {
+            console.log('Hey! What\'s up? Hope you\'re having a great ' + timeOfDay + '. I\'m ' + this.name + '! I\'m a ' + this.age + ' year old ' + this.job + '.');
+        }
+    }
+}
+
+john.presentation('formal', 'morning');
+john.presentation('friendly', 'evening');
