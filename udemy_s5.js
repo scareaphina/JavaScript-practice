@@ -1,3 +1,9 @@
+// prototype notes
+// every js object has a prototype property, which makes inheritance possible in js
+// the prototype property of an object is where we put methods and properties that we want other objects to inherit
+// the constructor's prototype property is NOT the prototype of the constructor itself, it is the prototype of all the instances that are created through it
+// when a certain method (or property) is called, the search starts in the object itself, and if it cannot be found, it moves on the object's prototype, this continues until the method is found: prototype chain
+
 // function constructor
 
 var john = {
