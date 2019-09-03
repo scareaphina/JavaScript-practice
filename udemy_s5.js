@@ -6,11 +6,13 @@
 
 // function constructor
 
-var john = {
-    name: 'John',
-    yearOfBirth: 1990,
-    job: 'teacher',
-};
+//var john = {
+//    name: 'John',
+//    yearOfBirth: 1990,
+//    job: 'teacher'
+//};
+
+// always write function constructors with a capital letter
 
 var Person = function(name, yearOfBirth, job) {
     this.name = name;
@@ -18,18 +20,17 @@ var Person = function(name, yearOfBirth, job) {
     this.job = job;
 }
 
-// inheritance
-Person.prototype.calculateAge = function () {
+Person.prototype.calculateAge = function() {
     console.log(2016 - this.yearOfBirth);
-};
+}
 
-// adds last name to the prototype property of the function construction
 Person.prototype.lastName = 'Smith';
 
-// new creates an empty object, then the constructor function (person) is called and the arguments are added to the empty object
 var john = new Person('John', 1990, 'teacher');
 var jane = new Person('Jane', 1969, 'designer');
 var mark = new Person('Mark', 1948, 'retired');
+
+// called "instantiation," because these objects are new instances of the person constructor
 
 john.calculateAge();
 jane.calculateAge();
