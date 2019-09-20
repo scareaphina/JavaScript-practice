@@ -112,6 +112,10 @@ var jane = Object.create(personProto, {
 
 // allows us to directly specify which object should be a prototype
 
+// the difference between object.create and the function constructor pattern is that object.create builds an object that inherits directly from the object that we passed into the first argument, while the function constructor creates a newly created object that inherits from the constructor's prototype property
+
+// Object.create allows us to implement really complex inheritance structures in an easier way
+
 // primitives vs objects
 // variables associated with objects do not actually contain the object, rather they contain a reference to the place in memory where the object is stored (abstraction)
 
