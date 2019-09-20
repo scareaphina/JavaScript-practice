@@ -70,6 +70,26 @@ console.log(cole);
 console.log(briar);
 console.log(claire);
 
+// making my own function constructor again
+
+var Rpg = function(name, publisher, gameSystem, genre, yeaOrNay) {
+    this.name = name;
+    this.publisher = publisher;
+    this.gameSystem = gameSystem;
+    this.yeaOrNay = yeaOrNay;
+    this.genre = genre;
+}
+
+var dresdenFiles = new Rpg('Dresden Files', 'Evil Hat', 'Fate', 'Modern High Fantasy/Adventure', 'Yea!');
+var witch = new Rpg('Witch: Road to Lindisfarne', 'Pompey Crew Design', 'Collaborative Storytelling', 'Horror and Feelings', 'Yea!');
+var dnd = new Rpg('Dungeons and Dragons', 'Wizards of the Coast', 'Who even knows', 'Fantasy and Adventure', 'Nay');
+var tenCandles = new Rpg('Ten Candles', 'Cavalry Games', 'Collaborative Storytelling', 'Horror and Feelings', 'Yea!');
+
+console.log(dresdenFiles);
+console.log(witch);
+console.log(dnd);
+console.log(tenCandles);
+
 // object.create
 
 var personProto = {
