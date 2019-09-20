@@ -166,6 +166,8 @@ console.log(obj.city);
 // primitive remains unchanged
 // primitive and object passed into the function, but they behave differently, the primitive remains unchanged but the city changes
 
+// we do not pass an object into a function, but only the reference that points to the object
+
 // Functions
 
 // Functions are an instance of the object type and behave like any other object. we can store them in a variable, pass them as an argument to other functions, and return functions from other functions.
