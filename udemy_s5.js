@@ -164,6 +164,7 @@ console.log(age);
 console.log(obj.city);
 
 // primitive remains unchanged
+// primitive and object passed into the function, but they behave differently, the primitive remains unchanged but the city changes
 
 // Functions
 
