@@ -32,6 +32,13 @@ var mark = new Person('Mark', 1948, 'retired');
 
 // called "instantiation," because these objects are new instances of the person constructor
 
+// called instantiation because these objects are instances of the person object
+
+// when we use the new operator, a new empty object is created, then after that the constructor function is called with the arguments that we specified
+
+// calling the function creates a new execution context that uses the this variable, which points to the global object
+// but if we look at the function constructor, the new operator makes it so that the this variable of the function points at the new empty object rather than the global object
+
 john.calculateAge();
 jane.calculateAge();
 mark.calculateAge();
