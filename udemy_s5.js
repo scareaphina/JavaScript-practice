@@ -122,11 +122,16 @@ var jane = Object.create(personProto, {
 var a = 23;
 var b = a;
 a = 46;
+//var b = a;
 
 console.log(a);
 console.log(b);
 
 // returns 23 and 46
+
+// each of the variables hold their own copy of the data and do not reference anything
+
+// two variables holding primitives are really two different things
 
 var obj1 = {
     name: 'John',
