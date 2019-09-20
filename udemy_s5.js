@@ -47,6 +47,8 @@ console.log(john.lastName);
 console.log(jane.lastName);
 console.log(mark.lastName);
 
+// this is not in the object, but we have access to it because of the function constructor
+
 // function constructor - making my own
 
 var Friend = function(name, faveFood, partner, petName, homeTown, pronouns) {
