@@ -319,6 +319,7 @@ retirementUS(1990);
 retirement(66)(1990);
 
 /////////////////////////
+// closures
 
 function retirement(retirementAge) {
     var a = ' years left until retirement.';
@@ -328,13 +329,19 @@ function retirement(retirementAge) {
     }
 }
 
+// inner function is able to use the retirement and age function that are already gone (have already returned), and that is the function of the closure
+
 var retirementUS = retirement(66);
 var retirementGermany = retirement(65);
 var retirementIceland = retirement(67);
 
 retirementGermany(1990);
-retirementUS(1990);
 retirementIceland(1990);
+retirementUS(1990);
+retirement(66)(1990);
+
+
+//closures:  an inner function always has access to the variables and parameters of its outer function, even after the outer function has returned
 
 
 //retirement(66)(1990);
