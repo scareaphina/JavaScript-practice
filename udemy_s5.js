@@ -300,6 +300,8 @@ game();
     console.log(score >= 5 - goodLuck);
 }) (5);
 
+// we can only call an iife once, becuase it is not assigned to any variable
+
 ///////////////////////////
 // Closures
 
