@@ -213,7 +213,7 @@ console.log(rates);
 function interviewQuestion(job) {
     if (job === 'designer') {
         return function(name) {
-            console.log(name + ', can you please xplain what UX design is?');
+            console.log(name + ', can you please explain what you UX design is?');
         }
     } else if (job === 'teacher') {
         return function(name) {
@@ -221,21 +221,27 @@ function interviewQuestion(job) {
         }
     } else {
         return function(name) {
-            console.log('Hello ' + name + ', What do you do?')
+            console.log('Hello ' + name + ', what do you do?');
         }
     }
 }
 
 var teacherQuestion = interviewQuestion('teacher');
 var designerQuestion = interviewQuestion('designer');
+var driverQuestion = interviewQuestion('driver');
 
 teacherQuestion('John');
-designerQuestion('John');
+designerQuestion('Mary');
+driverQuestion('Bill');
 designerQuestion('Jane');
 designerQuestion('Mark');
 designerQuestion('Mike');
 
 interviewQuestion('teacher')('Mark');
+interviewQuestion('artist')('Elana');
+interviewQuestion('designer')('Jason');
+
+//these last few work because they are read from left to right, so it returns the function based on the information fed to the function, then the function within the function
 
 ////////////////////////////
 
