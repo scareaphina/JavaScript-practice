@@ -364,6 +364,29 @@ interviewQuestion('teacher')('John');
 interviewQuestion('designer')('Jane');
 interviewQuestion('driver')('Mike');
 
+/////////////////
+
+// a different approach
+
+function interviewQuestion(job) {
+    var a = name + ', can you please explain what UX design is?';
+    var b = name + ', what subject do you teach?';
+    var c = name + ', what do you do?';
+    return function(name) {
+        if (job === 'designer') {
+            console.log(name + a);
+        } else if (job === 'teacher') {
+            console.log(name + b);
+        } else {
+            console.log (name + c);
+        }
+    }
+}
+
+interviewQuestion('teacher')('Mark');
+interviewQuestion('designer')('Lisa');
+interviewQuestion('banker')('Bill');
+
 ///////////////////////////
 // bind, call, and apply
 
