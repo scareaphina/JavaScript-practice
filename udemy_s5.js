@@ -182,9 +182,17 @@ function arrayCalc(arr, fn) {
     return arrRes;
 }
 
+// callback functions - functions that we pass into functions that will then call them later
+
 function calculateAge(el) {
     return 2016 - el;
 }
+
+var ages = arrayCalc(years, calculateAge);
+
+console.log(ages);
+
+//
 
 function isFullAge(el) {
     return el >= 18;
