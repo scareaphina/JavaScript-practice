@@ -420,6 +420,10 @@ john.presentation.call(emily, 'friendly', 'afternoon');
 // apply method
 // john.presentation.apply(emily ['friendly, afternoon']);
 
+john.presentation.apply(emily, ['formal', 'morning']);
+
+// Jonas said this wouldn't work, because our function doesn't expect an array, but it did. Ask Steve about this.
+
 // bind method
 var johnFriendly = john.presentation.bind(john, 'friendly');
 
