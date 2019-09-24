@@ -464,6 +464,8 @@ function isFullAge(limit, el) {
 
 var ages = arrayCalc(years, calculateAge);
 var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+var fullUS = arrayCalc(ages, isFullAge.bind(this, 18));
 
 console.log(ages);
 console.log(fullJapan);
+console.log(fullUS);
