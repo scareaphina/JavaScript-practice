@@ -25,7 +25,7 @@ c) correct answer (I would use a number for this)
 function Question(question, answers, correct) {
     this.question = question;
     this.answers = answers;
-    this.correctAnswer = correct;
+    this.correct = correct;
 }
 
 Question.prototype.displayQuestion = function() {
@@ -33,6 +33,14 @@ Question.prototype.displayQuestion = function() {
     for (var i = 0; i < this.answers.length; i++) {
         console.log(i + ': ' +
             this.answers[i]);
+    }
+}
+
+Question.prototype.checkAnswer = function(ans) {
+    if (ans === this.correct) {
+        console.log('Correct answer!');
+    } else {
+        console.log('Wrong answer, try again!');
     }
 }
 
@@ -46,3 +54,7 @@ var questions = [q1, q2, q3, q4];
 var n = Math.floor(Math.random() * questions.length);
 
 questions[n].displayQuestion();
+
+var answer = parseInt(prompt('Please select the correct answer.'));
+
+questions[n].checkAnswer(answer);
