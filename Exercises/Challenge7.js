@@ -22,6 +22,7 @@ c) correct answer (I would use a number for this)
 11. Display the score in the console. Use yet another method for this.
 */
 
+(function () {
 function Question(question, answers, correct) {
     this.question = question;
     this.answers = answers;
@@ -58,3 +59,4 @@ questions[n].displayQuestion();
 var answer = parseInt(prompt('Please select the correct answer.'));
 
 questions[n].checkAnswer(answer);
+})();
