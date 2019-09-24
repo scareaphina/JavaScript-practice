@@ -28,7 +28,21 @@ function Question(question, answers, correct) {
     this.correctAnswer = correct;
 }
 
+Question.prototype.displayQuestion = function() {
+    console.log(this.question);
+    for (var i = 0; i < this.answers.length; i++) {
+        console.log(i + ': ' +
+            this.answers[i]);
+    }
+}
+
 var q1 = new Question('Is Seraphina queer?', ['Yes', 'No'], 0);
 var q2 = new Question('How many cats does Seraphina have?', [0, 1, 2, 3, 4, 5], 2);
 var q3 = new Question('Does Seraphina love coding?', ['Yes', 'No'], 0);
 var q4 = new Question('Is Seraphina a gamer?', ['Yes', 'No'], 0);
+
+var questions = [q1, q2, q3, q4];
+
+var n = Math.floor(Math.random() * questions.length);
+
+questions[n].displayQuestion();
