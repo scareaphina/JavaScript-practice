@@ -425,14 +425,19 @@ john.presentation.apply(emily, ['formal', 'morning']);
 // Jonas said this wouldn't work, because our function doesn't expect an array, but it did. Ask Steve about this.
 
 // bind method
+
+// bind doesn't immediately call the function, but creates a copy of the function that we then have to store somewhere
+
 var johnFriendly = john.presentation.bind(john, 'friendly');
 
 johnFriendly('morning');
 johnFriendly('night');
 
+// bind allows us to preset arguments through what is called carrying, where we create a function based on another function with some preset parameters
+
 var emilyFormal = john.presentation.bind(emily, 'formal');
 
-emilyFormal('afternoon');
+emilyFormal('morning');
 emilyFormal('evening');
 
 // another bind example
