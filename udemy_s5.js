@@ -396,20 +396,27 @@ var john = {
     job: 'teacher',
     presentation: function(style, timeOfDay) {
         if (style === 'formal') {
-            console.log('Good ' + timeOfDay + ', everyone! I\'m ' + this.name + ', I\'m a ' + this.job + ', and I\'m ' + this.age + ' years old.');
+            console.log('Good ' + timeOfDay + ', Ladies and gentlemen! I\'m a ' + this.job + ', and I\'m ' + this.age + ' years old.');
         } else if (style === 'friendly') {
-            console.log('Hey! What\'s up? Hope you\'re having a great ' + timeOfDay + '. I\'m ' + this.name + '! I\'m a ' + this.age + ' year old ' + this.job + '.');
+            console.log('Hello, all! I hope you are having a nice ' + timeOfDay + '. My name is ' + this.name + ', I\'m a ' + this.job + ', and I\'m ' + this.age + ' years old.');
         }
     }
 }
 
+var emily = {
+    name: 'Emily',
+    age: 35,
+    job: 'designer'
+};
+
 john.presentation('formal', 'morning');
 john.presentation('friendly', 'evening');
 
-// call method
-john.presentation.call(emily, 'formal', 'evening');
+// can use the call method to apply presentation to the emily object. the first argument it takes is the 'this' variable, then any other variables needed
+
 john.presentation.call(emily, 'friendly', 'afternoon');
 
+// this is called 'method borrowing'
 // apply method
 // john.presentation.apply(emily ['friendly, afternoon']);
 
