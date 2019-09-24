@@ -94,13 +94,9 @@ questions[n].checkAnswer(answer);
     }
 
     var q1 = new Question('Is Seraphina queer?', ['Yes', 'No'], 0);
-    
     var q2 = new Question('How many cats does Seraphina have?', [0, 1, 2, 3, 4, 5], 2);
-    
     var q3 = new Question('Does Seraphina love coding?', ['Yes', 'No'], 0);
-    
     var q4 = new Question('Is Seraphina a gamer?', ['Yes', 'No'], 0);
-
     var questions = [q1, q2, q3, q4];
 
     function score() {
@@ -109,7 +105,7 @@ questions[n].checkAnswer(answer);
             if (correct) {
                 sc++;
             }
-            return sc;
+            return score;
         }
     }
 
@@ -122,7 +118,7 @@ questions[n].checkAnswer(answer);
         var answer = prompt('Please select the correct answer.');
         
         if (answer !== 'exit') {
-            questions[n].checkAnswer(parseInt(answer)), (keepScore);
+            questions[n].checkAnswer(parseInt(answer), keepScore);
             nextQuestion();
         }
     }
@@ -130,26 +126,3 @@ questions[n].checkAnswer(answer);
     nextQuestion();
     
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
