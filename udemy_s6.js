@@ -10,6 +10,7 @@
 // this section contains:
 // how to use the module pattern
 // private and public data, encapsulation, and separation of concerns
+// separation of concerns - each part of the project should only be interested in doing one thing
 
 ///////////////////////////////
 
@@ -23,8 +24,28 @@ var budgetController = (function() {
 
     return {
         publicTest: function(b) {
-            console.log(add(b));
+            return(add(b));
         }
     }
 
 })();
+
+
+var UIController = (function() {
+
+    // some code
+
+})();
+
+
+var controller = (function(budgetCtrl, UICtrl) {
+
+    var z = budgetCtrl.publicTest(5);
+
+    return {
+        anotherPublic: function() {
+            console.log(z);
+        }
+    }
+
+})(budgetController, UIController);
