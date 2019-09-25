@@ -31,15 +31,14 @@ var budgetController = (function() {
 var UIController = (function() {
 
     return {
-        getinput: function() {
+        getInput: function() {
             return {
             type: document.querySelector('.add__type').value, // will be either inc or exp
             description: document.querySelector('.add__description').value,
-            value: document.querySelector('add__value').value,
+            value: document.querySelector('.add__value').value
             };
         }
     };
-
 })();
 
 
