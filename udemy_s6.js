@@ -14,6 +14,7 @@
 
 // how to set up event listeners for keypress events
 // how to use the event object
+// read input data from different HTML input types
 
 ///////////////////////////////
 
@@ -29,7 +30,15 @@ var budgetController = (function() {
 // UI CONTROLLER
 var UIController = (function() {
 
-    // some code
+    return {
+        getinput: function() {
+            return {
+            type: document.querySelector('.add__type').value, // will be either inc or exp
+            description: document.querySelector('.add__description').value,
+            value: document.querySelector('add__value').value,
+            };
+        }
+    };
 
 })();
 
@@ -40,6 +49,8 @@ var controller = (function(budgetCtrl, UICtrl) {
     var ctrlAddItem = function() {
 
         // 1. get field input data
+        var input = UICtrl.getinput();
+        console.log(input);
 
         // 2. add item to the budget controller
         
@@ -48,8 +59,6 @@ var controller = (function(budgetCtrl, UICtrl) {
         // 4. calculate the budget
         
         // 5. display the budget on the UI
-
-        console.log('It works.');
 
     }
 
