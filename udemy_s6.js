@@ -7,22 +7,45 @@
 
 ///////////////////////////////
 
-// this section contains:
+// LESSONS LEARNED
+
 // how to use the module pattern
 // private and public data, encapsulation, and separation of concerns
 // separation of concerns - each part of the project should only be interested in doing one thing
-
 // how to set up event listeners for keypress events
 // how to use the event object
 // read input data from different HTML input types
 // how and why and how to create an initialization function 
+// how to choose function constructors that meet application needs
+// how to set up a proper data structure for budget controller
 
 ///////////////////////////////
 
 // BUDGET CONTROLLER
 var budgetController = (function () {
 
-    // some code
+    var Expense = function(id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+
+    var Income = function(id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+
+    var data = {
+        allItems: {
+            exp: [],
+            inc: []
+        },
+        totals: {
+            exp: 0,
+            inc: 0
+        }
+    }
 
 })();
 
