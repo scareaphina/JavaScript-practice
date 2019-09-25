@@ -20,6 +20,9 @@
 // how to set up a proper data structure for budget controller
 // how to avoid conflicts in data structures
 // how and why to pass data from one module to another
+// a technique for adding big chunks of html to the DOM
+// how to replace parts of strings
+// how to do DOM manipulation using the 'insertAdjascentHTML method
 
 ///////////////////////////////
 
@@ -108,6 +111,25 @@ var UIController = (function () {
                 value: document.querySelector(DOMstrings.inputValue).value
             };
         },
+
+        addListItem: function(obj, type) {
+            var html;
+
+            // create HTML string with placeholder text
+
+            if (type === 'inc') {
+                html = '<div class="item clearfix" id="income-%id%"><div class="item__description">%description%</div><div class="right clearfix"> <div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+            } else if (type === 'exp') {
+                html = '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+            }
+
+            // replace placeholder text with some actual data
+
+            
+
+            // insert the HTML into the DOM
+
+        }
 
         getDOMstrings: function () {
             return DOMstrings;
