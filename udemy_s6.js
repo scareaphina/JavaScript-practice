@@ -12,25 +12,21 @@
 // private and public data, encapsulation, and separation of concerns
 // separation of concerns - each part of the project should only be interested in doing one thing
 
+// how to set up event listeners for keypress events
+// how to use the event object
+
 ///////////////////////////////
 
+// BUDGET CONTROLLER
 var budgetController = (function() {
+
+    // some code
     
-    var x = 23;
-
-    var add = function(a) {
-        return x + a;
-    }
-
-    return {
-        publicTest: function(b) {
-            return(add(b));
-        }
-    }
-
 })();
 
 
+
+// UI CONTROLLER
 var UIController = (function() {
 
     // some code
@@ -38,14 +34,19 @@ var UIController = (function() {
 })();
 
 
+// GLOBAL APP CONTROLLER
 var controller = (function(budgetCtrl, UICtrl) {
 
-    var z = budgetCtrl.publicTest(5);
+    document.querySelector('.add__btn').addEventListener('click', function() {
+        
+        // 1. get field input data
+        // 2. add item to the budget controller
+        // 3. add new item to UI
+        // 4. calculate the budget
+        // 5. display the budget on the UI
 
-    return {
-        anotherPublic: function() {
-            console.log(z);
-        }
-    }
+    });
+
+
 
 })(budgetController, UIController);
