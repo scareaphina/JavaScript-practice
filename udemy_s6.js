@@ -7,25 +7,6 @@
 
 ///////////////////////////////
 
-// LESSONS LEARNED
-
-// how to use the module pattern
-// private and public data, encapsulation, and separation of concerns
-// separation of concerns - each part of the project should only be interested in doing one thing
-// how to set up event listeners for keypress events
-// how to use the event object
-// read input data from different HTML input types
-// how and why and how to create an initialization function 
-// how to choose function constructors that meet application needs
-// how to set up a proper data structure for budget controller
-// how to avoid conflicts in data structures
-// how and why to pass data from one module to another
-// a technique for adding big chunks of html to the DOM
-// how to replace parts of strings
-// how to do DOM manipulation using the 'insertAdjascentHTML method
-
-///////////////////////////////
-
 // BUDGET CONTROLLER
 var budgetController = (function () {
 
@@ -102,7 +83,7 @@ var UIController = (function () {
         inputValue: '.add__value',
         inputBtn: '.add__btn',
         incomeContainer: '.income__list',
-        expensesContainer: '.expense__list'
+        expensesContainer: '.expenses__list'
     };
 
     return {
