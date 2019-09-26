@@ -153,7 +153,11 @@ var UIController = (function () {
 
             var fieldsArr = Array.prototype.slice.call(fields);
 
-        }
+            fieldsArr.forEach(function(current, index, array) {
+                current.value = "";
+            });
+
+        },
 
         getDOMstrings: function () {
             return DOMstrings;
@@ -190,9 +194,12 @@ var controller = (function (budgetCtrl, UICtrl) {
         // 3. add new item to UI
         UICtrl.addListItem(newItem, input.type);
 
-        // 4. calculate the budget
+        // 4. clear the fields
+        UICtrl.clearFields();
 
-        // 5. display the budget on the UI
+        // 5. calculate the budget
+
+        // 6. display the budget on the UI
 
     };
 
