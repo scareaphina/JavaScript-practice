@@ -31,19 +31,21 @@
 // how to use querySelectorAll
 // how to convert a list into an array
 // a better way to loop over an array than for loops: foreach
+// how to convert field inputs to numbers
+// how to prevent false inputs
 
 ///////////////////////////////
 
 // BUDGET CONTROLLER
 var budgetController = (function () {
 
-    var Expense = function(id, description, value) {
+    var Expense = function (id, description, value) {
         this.id = id;
         this.description = description;
         this.value = value;
     };
 
-    var Income = function(id, description, value) {
+    var Income = function (id, description, value) {
         this.id = id;
         this.description = description;
         this.value = value;
@@ -61,7 +63,7 @@ var budgetController = (function () {
     };
 
     return {
-        addItem: function(type, des, val) {
+        addItem: function (type, des, val) {
             var newItem, ID;
 
             // [1 2 3 4 5], next ID = 6
@@ -75,10 +77,10 @@ var budgetController = (function () {
             } else {
                 ID = 0;
             }
-            
+
 
             // Create new item based on 'inc' or 'exp' type
-            if(type === 'exp') {
+            if (type === 'exp') {
                 newItem = new Expense(ID, des, val);
             } else if (type === 'inc') {
                 newItem = new Income(ID, des, val);
@@ -91,7 +93,7 @@ var budgetController = (function () {
             return newItem;
         },
 
-        testing: function() {
+        testing: function () {
             console.log(data);
         }
     };
@@ -118,11 +120,11 @@ var UIController = (function () {
             return {
                 type: document.querySelector(DOMstrings.inputType).value, // will be either inc or exp
                 description: document.querySelector(DOMstrings.inputDescription).value,
-                value: document.querySelector(DOMstrings.inputValue).value
+                value: parseFloat(document.querySelector(DOMstrings.inputValue).value)
             };
         },
 
-        addListItem: function(obj, type) {
+        addListItem: function (obj, type) {
             var html, newHtml, element;
 
             // create HTML string with placeholder text
@@ -146,17 +148,17 @@ var UIController = (function () {
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
         },
 
-        clearFields: function() {
+        clearFields: function () {
             var fields, fieldsArr;
 
             fields = document.querySelectorAll(DOMstrings.inputDescription + ', ' + DOMstrings.inputValue);
 
             var fieldsArr = Array.prototype.slice.call(fields);
 
-            fieldsArr.forEach(function(current, index, array) {
+            fieldsArr.forEach(function (current, index, array) {
                 current.value = "";
             });
-            
+
             fieldsArr[0].focus();
 
         },
@@ -184,29 +186,42 @@ var controller = (function (budgetCtrl, UICtrl) {
         });
     };
 
+    var updateBudget = function () {
+
+        // 1. calculate the budget
+
+        // 2. return the budget
+
+        // 3. display the budget on the UI
+
+    };
+
     var ctrlAddItem = function () {
         var input, newItem;
 
         // 1. get field input data
         input = UICtrl.getInput();
 
-        // 2. add item to the budget controller
-        newItem = budgetCtrl.addItem(input.type, input.description, input.value);
+        if (input.description !== "" && !isNaN(input.value) && input.value > 0) {
+            
+            // 2. add item to the budget controller
+            newItem = budgetCtrl.addItem(input.type, input.description, input.value);
 
-        // 3. add new item to UI
-        UICtrl.addListItem(newItem, input.type);
+            // 3. add new item to UI
+            UICtrl.addListItem(newItem, input.type);
 
-        // 4. clear the fields
-        UICtrl.clearFields();
+            // 4. clear the fields
+            UICtrl.clearFields();
 
-        // 5. calculate the budget
+            // 5. calculate and update budget
+            updateBudget();
 
-        // 6. display the budget on the UI
+        }
 
     };
 
     return {
-        init: function() {  // public initiation function
+        init: function () {  // public initiation function
             console.log('Application has started.')
             setupEventListeners();
         }
