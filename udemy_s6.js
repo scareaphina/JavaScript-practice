@@ -35,6 +35,10 @@
 // how to prevent false inputs
 // how and why to create simple, reusable functions with only one purpose
 // how to sum all elements of an array using the forEach method
+// use cases for event delegation - 1. when we have an event with lots of child elements that we are interested in 2. when we want an event handler attached to an element that is not yet in the DOM when our page is loaded
+// how to use event delegation in practice
+// how to use IDs in HTML to connect the UI with the data model
+// how to use the parentNode property for Dom traversing
 
 ///////////////////////////////
 
@@ -155,7 +159,8 @@ var UIController = (function () {
         budgetLabel: '.budget__value',
         incomeLabel: '.budget__income--value',
         expensesLabel: '.budget__expenses--value',
-        percentageLabel: '.budget__expenses--percentage'
+        percentageLabel: '.budget__expenses--percentage',
+        container: '.container'
     };
 
     return {
@@ -203,7 +208,6 @@ var UIController = (function () {
             });
 
             fieldsArr[0].focus();
-
         },
 
         displayBudget: function (obj) {
@@ -241,6 +245,9 @@ var controller = (function (budgetCtrl, UICtrl) {
                 ctrlAddItem();
             }
         });
+
+        document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
+        
     };
 
     var updateBudget = function () {
@@ -276,6 +283,13 @@ var controller = (function (budgetCtrl, UICtrl) {
             updateBudget();
 
         }
+
+    };
+
+    var ctrlDeleteItem = function(event) {
+        var itemID;
+
+        itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
 
     };
 
