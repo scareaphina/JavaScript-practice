@@ -39,6 +39,8 @@
 // how to use event delegation in practice
 // how to use IDs in HTML to connect the UI with the data model
 // how to use the parentNode property for Dom traversing
+// another method to loop over arrays: map
+// how to remove elements from an array using the splice method
 
 ///////////////////////////////
 
@@ -219,7 +221,7 @@ var UIController = (function () {
             if (obj.percentage > 0) {
                 document.querySelector(DOMstrings.percentageLabel).textContent = obj.percentage + '%';
             } else {
-                document.querySelector(DOMstrings.percentageLabel).textContent = '--';
+                document.querySelector(DOMstrings.percentageLabel).textContent = '---';
             }
             
         },
