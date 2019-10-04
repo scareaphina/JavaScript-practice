@@ -48,6 +48,7 @@
 // how to create a forEach function for nodeLists instead of arrays
 // different string methods to manipulate strings
 // using the Date object constructor
+// how and when to use 'change' events
 
 ///////////////////////////////
 
@@ -70,7 +71,7 @@ var budgetController = (function () {
         }
     };
 
-    Expense.prototype.getPercentage = function() {
+    Expense.prototype.getPercentage = function () {
         return this.percentage;
     };
 
@@ -172,13 +173,13 @@ var budgetController = (function () {
 
         calculatePercentages: function () {
 
-            data.allItems.exp.forEach(function(cur) {
+            data.allItems.exp.forEach(function (cur) {
                 cur.calcPercentage(data.totals.inc);
             });
         },
 
-        getPercentages: function() {
-            var allPerc = data.allItems.exp.map(function(cur) {
+        getPercentages: function () {
+            var allPerc = data.allItems.exp.map(function (cur) {
                 return cur.getPercentage();
             });
             return allPerc;
@@ -222,7 +223,7 @@ var UIController = (function () {
         dateLabel: '.budget__title--month'
     };
 
-    var formatNumber = function(num, type) {
+    var formatNumber = function (num, type) {
         var numSplit, int, dec, type;
         /*
             + or - before number
@@ -247,6 +248,12 @@ var UIController = (function () {
 
         return (type === 'exp' ? '-' : '+') + ' ' + int + '.' + dec;
 
+    };
+
+    var nodeListForEach = function (list, callback) {
+        for (var i = 0; i < list.length; i++) {
+            callback(list[i], i);
+        }
     };
 
     return {
@@ -320,17 +327,11 @@ var UIController = (function () {
 
         },
 
-        displayPercentages: function(percentages) {
+        displayPercentages: function (percentages) {
 
             var fields = document.querySelectorAll(DOMstrings.expensesPercLabel);
 
-            var nodeListForEach = function(list, callback) {
-                for (var i = 0; i < list.length; i++) {
-                    callback(list[i], i);
-                }
-            };
-
-            nodeListForEach(fields, function(current, index) {
+            nodeListForEach(fields, function (current, index) {
 
                 if (percentages[index] > 0) {
                     current.textContent = percentages[index] + '%';
@@ -341,7 +342,7 @@ var UIController = (function () {
 
         },
 
-        displayDate: function() {
+        displayDate: function () {
             var now, months, month, year;
 
             now = new Date();
@@ -349,9 +350,24 @@ var UIController = (function () {
 
             months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
             month = now.getMonth();
-            
+
             year = now.getFullYear();
             document.querySelector(DOMstrings.dateLabel).textContent = months[month] + ' ' + year;
+        },
+
+        changedType: function () {
+
+            var fields = document.querySelectorAll(
+                DOMstrings.inputType + ',' +
+                DOMstrings.inputDescription + ',' +
+                DOMstrings.inputValue);
+
+            nodeListForEach(fields, function(cur) {
+                cur.classList.toggle('red-focus');
+            });
+
+            document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
+
         },
 
         getDOMstrings: function () {
@@ -378,6 +394,7 @@ var controller = (function (budgetCtrl, UICtrl) {
 
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
 
+        document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changedType);
     };
 
     var updateBudget = function () {
