@@ -42,6 +42,9 @@
 // another method to loop over arrays: map
 // how to remove elements from an array using the splice method
 // how to remove an element from the DOM
+
+// returning to work after Rosh Hashanah -- happy 5780!
+
 // how to create a forEach function for nodeLists instead of arrays
 // different string methods to manipulate strings
 
