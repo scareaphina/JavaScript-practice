@@ -43,6 +43,7 @@
 // how to remove elements from an array using the splice method
 // how to remove an element from the DOM
 // how to create a forEach function for nodeLists instead of arrays
+// different string methods to manipulate strings
 
 ///////////////////////////////
 
@@ -303,6 +304,22 @@ var UIController = (function () {
                 }
             });
 
+        },
+
+        formatNumber: function(num, type) {
+            var numSplit;
+
+            // + or - before the number
+            // exactly two decimal points
+            // comma separating thousands
+
+            // 2310.4567 --> + 2,310.46
+            // 2000 --> + 2,000.00
+
+            num = Math.abs(num);
+            num = num.toFixed(2);
+
+            numSplit = num.split('.');
         },
 
         getDOMstrings: function () {
