@@ -62,16 +62,16 @@ var budgetController = (function () {
         this.percentage = -1;
     };
 
-    Expense.prototype.calcPercentage = function (totalIncome) {
-
+    Expense.prototype.calcPercentage = function(totalIncome) {
         if (totalIncome > 0) {
-            this.percentage = Math.round((this.value / totalIncome) * 100)
+            this.percentage = Math.round((this.value / totalIncome) * 100);
         } else {
             this.percentage = -1;
         }
     };
-
-    Expense.prototype.getPercentage = function () {
+    
+    
+    Expense.prototype.getPercentage = function() {
         return this.percentage;
     };
 
@@ -163,11 +163,11 @@ var budgetController = (function () {
             data.budget = data.totals.inc - data.totals.exp;
 
             // 3. calculate percentage of income that we spent
-            if (data.totals.income > 0) {
+            if (data.totals.inc > 0) {
                 data.percentage = Math.round((data.totals.exp / data.totals.inc) * 100);
             } else {
                 data.percentage = -1;
-            }
+            }        
 
         },
 
