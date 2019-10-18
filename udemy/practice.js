@@ -99,4 +99,9 @@ var person2 = prompt("Please enter the name of your crush.");
 var loveTester = Math.random() * 100;
 loveScore = Math.floor(loveTester) + 1;
 
-alert(person1 + ", your love score with " + person2 + " is " + loveScore + "%");
+if (loveScore > 90) {
+  alert(person1 + ", your love score with " + person2 + " is " + loveScore + "%!!"
+ + " You love each other as much as Kanye loves Kanye!")
+} else {
+  alert(person1 + ", your love score with " + person2 + " is " + loveScore + "%")
+}
