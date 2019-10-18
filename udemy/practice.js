@@ -8,7 +8,9 @@ var nameIntCaps = firstChar.toUpperCase();
 
 var restOfName = name.slice(1,name.length);
 
-var newName = nameIntCaps + restOfName;
+var nameFullLower = restOfName.toLowerCase();
+
+var newName = nameIntCaps + nameFullLower;
 
 alert("Hello " + newName + "!");
 
