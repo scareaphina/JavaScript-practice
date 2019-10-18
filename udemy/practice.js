@@ -74,3 +74,12 @@ function calcChange(startingAmount, costPerBottle) {
 }
 
 console.log("Hello Master, here is your $" + getMilk(10, 3) + " change. And your milk.");
+
+// an itty BMI calculator
+
+function bmiCalculator(weight, height) {
+  var bmi = Math.round(weight / Math.pow(height, 2));
+  return "Your BMI is " + bmi + ".";
+}
+
+bmiCalculator(65, 1.8);
