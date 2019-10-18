@@ -2,11 +2,15 @@
 
 var name = prompt("What is your name?");
 
-var nameCaps = (name.slice(0,1)).toUpperCase();
+var firstChar = name.slice(0,1);
 
-var newName = nameCaps + name.slice(1,100);
+var nameIntCaps = firstChar.toUpperCase();
 
-alert("Your name is " + newName + ".");
+var restOfName = name.slice(1,name.length);
+
+var newName = nameIntCaps + restOfName;
+
+alert("Hello " + newName + "!");
 
 // a simple tweet character counter
 
