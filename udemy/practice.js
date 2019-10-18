@@ -99,9 +99,11 @@ var person2 = prompt("Please enter the name of your crush.");
 var loveTester = Math.random() * 100;
 loveScore = Math.floor(loveTester) + 1;
 
-if (loveScore > 90) {
+if (loveScore > 70) {
   alert(person1 + ", your love score with " + person2 + " is " + loveScore + "%!!"
- + " You love each other as much as Kanye loves Kanye!")
+ + " You love each other as much as Kanye loves Kanye!");
+} else if (loveScore > 30 && loveScore < 70) {
+  alert(person1 + ", your love score with " + person2 + " is " + loveScore + "%!" + " You could fizzle or sizzle.");
 } else {
-  alert(person1 + ", your love score with " + person2 + " is " + loveScore + "%")
+  alert(person1 + ", your love score with " + person2 + " is " + loveScore + "%." + " Friendship is probably the way to go with " + person2 + ".");
 }
