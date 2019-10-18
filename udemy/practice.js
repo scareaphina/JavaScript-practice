@@ -6,7 +6,7 @@ var nameCaps = (name.slice(0,1)).toUpperCase();
 
 var newName = nameCaps + name.slice(1,100);
 
-alert("Your name is " + newName);
+alert("Your name is " + newName + ".");
 
 // a simple tweet character counter
 
