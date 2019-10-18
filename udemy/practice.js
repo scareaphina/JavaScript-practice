@@ -84,9 +84,19 @@ function bmiCalculator(weight, height) {
 
 bmiCalculator(65, 1.8);
 
-//pseudorandom number generator
+// pseudorandom number generator
 
 var n = Math.random();
 n = n * 6;
 n = Math.floor(n) + 1;
 console.log(n);
+
+// using random numbers to make a little love tester
+
+var person1 = prompt("Please enter your name.");
+var person2 = prompt("Please enter the name of your crush.");
+
+var loveTester = Math.random() * 100;
+loveScore = Math.floor(loveTester) + 1;
+
+alert(person1 + ", your love score with " + person2 + " is " + loveScore + "%");
