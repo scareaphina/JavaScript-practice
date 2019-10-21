@@ -124,3 +124,14 @@ if (bmi < 18.5) {
 }
 }
 
+// alerts and booleans
+
+var guestList = ["Angela", "William", "Lars", "Jason", "Jane", "Anthony", "Jim"];
+
+var guestName = prompt("Please enter your name.");
+
+if (guestList.includes(maybeGuest)) {
+  alert("Welcome, " + guestName + "! I'm excited to see you at my party!");
+} else {
+  alert("Sorry " + guestName + ", you aren't on the list.");
+}
