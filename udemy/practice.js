@@ -107,3 +107,20 @@ if (loveScore > 70) {
 } else {
   alert(person1 + ", your love score with " + person2 + " is " + loveScore + "%." + " Friendship is probably the way to go with " + person2 + ".");
 }
+
+// playing more with bmi calculator
+
+function bmiCalculator (weight, height) {
+    return interpretation;
+}
+
+function interpretation () {
+if (bmi < 18.5) {
+  alert("Your BMI is " + bmi + ", so you are underweight.");
+} else if (bmi < 24.9 && bmi > 18.5) {
+  alert("Your BMI is " + bmi + ", so you are a normal weight.");
+} else {
+  alert("Your BMI is " + bmi + ", so you are overweight.");
+}
+}
+
