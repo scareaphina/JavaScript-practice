@@ -166,9 +166,9 @@ var numberOfBottles = 99
 
 while (numberOfBottles >= 0) {
 
-    var bottleWord = "bottle";
+    var bottleWord = "bottles";
     if (numberOfBottles === 1) {
-        bottleWord = "bottles";
+        bottleWord = "bottle";
     } 
 
     console.log(numberOfBottles + " " + bottleWord + " of beer on the wall");
