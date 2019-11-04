@@ -9,10 +9,35 @@ name5 = 'Jane Miller';
 console.log(name5);
 
 // ES6
-const name6 = 'Jane Smith'; // variables declared with const are immutable
-let age6 = 23;
-name6 = 'Jane Miller';
-console.log(name6);
+// const name6 = 'Jane Smith'; // variables declared with const are immutable
+// let age6 = 23;
+// name6 = 'Jane Miller';
+// console.log(name6);
+
+// ES5
+function driversLicence5(passedTest) {
+  if (passedTest) {
+    var firstName = 'John';
+    var yearOfBirth = 1990;
+  }
+
+  console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.');
+
+}
+
+driversLicence6(true);
+
+// ES6
+function driversLicence6(passedTest) {
+  if (passedTest) {
+    let firstName = 'John';
+    const yearOfBirth = 1990;
+
+    console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.'); // if you move this out of the if statement, it doesn't work because if and const are block scoped, not function scoped
+  }
+}
+
+driversLicence6(true);
 
 // blocks and IIFEs
 // strings
