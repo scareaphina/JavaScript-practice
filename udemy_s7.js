@@ -44,6 +44,15 @@ function driversLicence6(passedTest) {
 
 driversLicence6(true);
 
+let i = 23;
+
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+console.log(i);
+// logged to console is 1 2 3 4 23 because of block scoping, just like if you define a variable of the same name outside of a function.
+
 // blocks and IIFEs
 // strings
 // arrow functions
