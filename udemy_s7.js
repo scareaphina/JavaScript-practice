@@ -52,8 +52,27 @@ for (let i = 0; i < 5; i++) {
 
 console.log(i);
 // logged to console is 1 2 3 4 23 because of block scoping, just like if you define a variable of the same name outside of a function.
-
+///////////////////////////////
 // blocks and IIFEs
+
+// ES6
+{
+  const a = 1;
+  let b = 2;
+  var c = 3;
+}
+
+//console.log(a + b);
+console.log(c);
+
+// ES5
+(function () {
+  var c = 3;
+})();
+
+//console.log(c);
+
+
 // strings
 // arrow functions
 // deconstructing
