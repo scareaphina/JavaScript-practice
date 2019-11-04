@@ -16,6 +16,7 @@ console.log(name5);
 
 // ES5
 function driversLicence5(passedTest) {
+
   if (passedTest) {
     var firstName = 'John';
     var yearOfBirth = 1990;
@@ -29,12 +30,16 @@ driversLicence6(true);
 
 // ES6
 function driversLicence6(passedTest) {
-  if (passedTest) {
-    let firstName = 'John';
-    const yearOfBirth = 1990;
 
-    console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.'); // if you move this out of the if statement, it doesn't work because if and const are block scoped, not function scoped
+  let firstName;
+  const yearOfBirth = 1990;
+
+  if (passedTest) {
+    firstName = 'John';
   }
+
+  console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.'); // if you move this out of the if statement, it doesn't work because if and const are block scoped, not function scoped
+
 }
 
 driversLicence6(true);
