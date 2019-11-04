@@ -90,6 +90,12 @@ console.log('This is ' + firstName + ' ' + lastName + '. He was born in ' + year
 // ES 6
 console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today, he is ${calcAge(yearOfBirth)} years old.`);
 
+const n = `${firstName} ${lastName}`;
+console.log(n.startsWith('J'));
+console.log(n.endsWith('h'));
+console.log(n.includes(' '));
+console.log(`${firstName} `.repeat(5));
+
 // arrow functions
 // deconstructing
 // arrays
