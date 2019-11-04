@@ -96,7 +96,22 @@ console.log(n.endsWith('h'));
 console.log(n.includes(' '));
 console.log(`${firstName} `.repeat(5));
 
+///////////////////////////////
 // arrow functions
+
+const years = [1990, 1965, 1982, 1937];
+
+// ES5
+var ages5 = years.map(function(el) {
+  return 2019 - el;
+});
+console.log(ages5);
+
+// ES6
+const ages6 = years.map(el => 2019 - el);
+console.log(ages6);
+
+
 // deconstructing
 // arrays
 // the spread operator
