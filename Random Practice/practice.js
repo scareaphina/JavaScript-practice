@@ -55,3 +55,19 @@ do {
   if (i % 2 !== 0) console.log(i);
   i++;
 } while (i <= 5);
+
+// for-in
+
+const person = {
+  name: "Mosh",
+  age: 30,
+};
+
+for (let key in person)
+console.log(key, person[key]);
+
+// // dot notation
+// person.name
+//
+// // bracket notation - when we don't know ahead of time what property we will want to access
+// person["name"]
