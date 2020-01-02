@@ -12,8 +12,8 @@ console.log('Hello, world!');
 var emptyObject = {};
 
 var stooge = {
-  firstName: "Jerome",
-  lastName: "Howard"
+  "first-name": "Jerome",
+  "last-name": "Howard"
 };
 
 var flight = {
@@ -22,7 +22,7 @@ var flight = {
   departure: {
     IATA: "SYD",
     time: "2004-09-22 14:55",
-    city: "Sydney" 
+    city: "Sydney"
   },
   arrival: {
     IATA: "LAX",
@@ -30,3 +30,15 @@ var flight = {
     city: "Los Angeles"
   }
 };
+
+console.log(stooge["first-name"]);
+console.log(flight.departure.IATA);
+
+console.log(stooge["middle-name"]);
+console.log(flight.status);
+console.log(stooge["FIRST-NAME"]);
+
+var middle = stooge["middle-name"] || "(none)";
+var status = flight.status || "unknown";
+
+
