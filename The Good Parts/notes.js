@@ -5,10 +5,28 @@ Function.prototype.method = function (name, func) {
 
 console.log('Hello, world!');
 
-//array.concat
+// Chapter 3: Objects
 
-var a = ['a', 'b', 'c'];
-var b = ['x', 'y', 'z'];
-var c = a.concat(b, true);
+// Object Literals
 
-console.log(c);
+var emptyObject = {};
+
+var stooge = {
+  firstName: "Jerome",
+  lastName: "Howard"
+};
+
+var flight = {
+  airline: "Oceanic",
+  number: 815,
+  departure: {
+    IATA: "SYD",
+    time: "2004-09-22 14:55",
+    city: "Sydney" 
+  },
+  arrival: {
+    IATA: "LAX",
+    time: "2004-09-23 10:42",
+    city: "Los Angeles"
+  }
+};
