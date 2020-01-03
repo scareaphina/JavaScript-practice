@@ -41,7 +41,7 @@ console.log(stooge["FIRST-NAME"]);
 var middle = stooge["middle-name"] || "(none)";
 var status = flight.status || "unknown";
 
-// update
+// Update
 
 // if the property name already exists, it is replaced
 
@@ -56,4 +56,18 @@ flight.equipment = {
 };
 flight.status = 'overdue';
 
+// other objects are passed by reference. never copied.
 
+var x = stooge;
+x.nickname = 'Curly';
+var nick = stooge.nickname;
+
+// nick is 'Curly' because x and stooge are references to the same object
+
+var a = {}, b = {}, c = {};
+
+// a, b, and c each refer to a different empty object
+
+c = d = e = {};
+
+// c, d, and e each refer to the same empty object
