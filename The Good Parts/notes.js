@@ -41,4 +41,19 @@ console.log(stooge["FIRST-NAME"]);
 var middle = stooge["middle-name"] || "(none)";
 var status = flight.status || "unknown";
 
+// update
+
+// if the property name already exists, it is replaced
+
+stooge["first-name"] = 'Jerome';
+
+// if it doesn't exist, the object is augmented
+
+stooge["middle-name"] = 'Lester';
+stooge.nickname = 'Curly';
+flight.equipment = {
+  model: 'Boeing 77'
+};
+flight.status = 'overdue';
+
 
