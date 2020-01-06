@@ -91,3 +91,16 @@ anotherStooge.nickname = 'Moe';
 anotherStooge.profession = 'actor';
 
 console.log(anotherStooge.profession);
+
+// Reflection
+
+console.log(typeof flight.number);
+console.log(typeof flight.status);
+console.log(typeof flight.arrival);
+console.log(typeof flight.manifest);
+
+console.log(typeof flight.toString);
+console.log(typeof flight.constructor);
+
+console.log(flight.hasOwnProperty('number'));
+console.log(flight.hasOwnProperty('constructor'));
