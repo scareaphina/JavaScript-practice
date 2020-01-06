@@ -71,3 +71,23 @@ var a = {}, b = {}, c = {};
 c = d = e = {};
 
 // c, d, and e each refer to the same empty object
+
+// Prototype
+
+if (typeof Object.create !== 'function') {
+  Object.create = function (o) {
+    var F = function () {};
+    F.prototype = o;
+    return new F();
+  };
+}
+
+var anotherStooge = Object.create(stooge);
+
+anotherStooge['first-name'] = 'Harry';
+anotherStooge['middle-name'] = 'Moses';
+anotherStooge.nickname = 'Moe';
+
+anotherStooge.profession = 'actor';
+
+console.log(anotherStooge.profession);
