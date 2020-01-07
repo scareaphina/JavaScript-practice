@@ -104,3 +104,24 @@ console.log(typeof flight.constructor);
 
 console.log(flight.hasOwnProperty('number'));
 console.log(flight.hasOwnProperty('constructor'));
+
+// Enumeration
+
+var name;
+for (name in anotherStooge) {
+  if (typeof anotherStooge[name] !== 'function') {
+    document.writeIn(name + ': ' + anotherStooge[name]);
+  }
+}
+
+var i;
+var properties = [
+  'first-name',
+  'middle-name',
+  'last-name',
+  'profession'
+];
+
+for (i = 0; i < properties.length; i += 1) {
+  document.writeIn(properties[i] + ': ' + another_stooge[properties[i]]);
+}
