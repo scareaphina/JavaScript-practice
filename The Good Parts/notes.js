@@ -125,3 +125,13 @@ var properties = [
 for (i = 0; i < properties.length; i += 1) {
   document.writeIn(properties[i] + ': ' + another_stooge[properties[i]]);
 }
+
+// Delete
+
+console.log(another_stooge.nickame);
+
+// remove nickname from another_stooge, revealing the nickname of the prototype
+
+delete another_stooge.nickname;
+
+console.log(another_stooge.nickame);
