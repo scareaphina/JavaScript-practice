@@ -14,3 +14,7 @@ $("body").keypress(function() {
 $(document).keypress(function() {
   $("h1").text(event.key);
 });
+
+$("h1").on("mouseover", function() {
+  $("h1").css("color", "purple");
+});
