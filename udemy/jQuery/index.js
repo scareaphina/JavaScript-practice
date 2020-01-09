@@ -35,3 +35,5 @@ $("button").on("click", function() {
 $("button").on("click", function() {
   $("h1").animate({opacity: 0.5});
 });
+
+// can only add css rules in the animate method that have a numeric value
