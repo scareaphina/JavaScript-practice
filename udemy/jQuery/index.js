@@ -37,3 +37,9 @@ $("button").on("click", function() {
 });
 
 // can only add css rules in the animate method that have a numeric value
+
+$("button").on("click", function() {
+  $("h1").slideUp().slideDown().animate({opacity: 0.5});
+});
+
+// can chain animations
