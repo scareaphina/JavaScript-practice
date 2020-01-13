@@ -1,9 +1,12 @@
+var buttonColors = ["red", "blue", "green", "yellow"];
 
-
+var randomChosenColor = buttonColors[randomNumber];
 
 function nextSequence(min, max) {
   min = 0;
-  max = 3;
+  max = 4;
 
-  return Math.floor(Math.random() * (max - min)) + min;
+  var randomNumber = Math.floor(Math.random() * (max - min)) + min;
+
+  return randomNumber;
 }
