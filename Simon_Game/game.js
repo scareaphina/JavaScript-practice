@@ -1,12 +1,12 @@
 var buttonColors = ["red", "blue", "green", "yellow"];
 
+var gamePattern = [];
+
 var randomChosenColor = buttonColors[randomNumber];
 
-function nextSequence(min, max) {
-  min = 0;
-  max = 4;
+function nextSequence() {
+  var randomNumber = Math.floor(Math.random() * 4);
+  var randomChosenColour = buttonColours[randomNumber];
 
-  var randomNumber = Math.floor(Math.random() * (max - min)) + min;
-
-  return randomNumber;
+  gamePattern.push(randomChosenColour);
 }
